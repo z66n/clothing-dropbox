@@ -1,0 +1,9 @@
+{
+  "name": "clothing-dropbox",
+  "version": "1.0.0",
+  "description": "Static map app for clothing dropboxes in City of Toronto",
+  "scripts": {
+    "fetch-data": "node fetch-data.js"
+  },
+  "license": "MIT"
+}
