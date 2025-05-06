@@ -80,7 +80,7 @@ function displayRoute(routeData) {
 async function loadGeoJSON() {
   try {
     // Fetch from YOUR server (no CORS issues)
-    const response = await fetch("/bsky/dropbox/data/clothing-dropboxes.geojson"); 
+    const response = await fetch("/data/clothing-dropboxes.geojson"); 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const geojson = await response.json();
