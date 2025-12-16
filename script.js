@@ -6,9 +6,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// OpenRouteService API key
-const apiKey = '5b3ce3597851110001cf6248b9bec4e6c3034c76be3f26090321b057'; // Replace with your OpenRouteService API key
-
 // Variable to store the current route layer
 let currentRouteLayer = null;
 
@@ -42,10 +39,16 @@ const catppuccin = {
     crust: '#11111b'
 };
 
-// Function to get a route using OpenRouteService Directions API
+// Function to get a route using OpenRouteService Directions API in serverless function
 async function getRoute(startCoords, endCoords) {
-    const url = `https://api.openrouteservice.org/v2/directions/foot-walking?api_key=${apiKey}&start=${startCoords.lng},${startCoords.lat}&end=${endCoords.lng},${endCoords.lat}`;
-    const response = await fetch(url);
+    const params = new URLSearchParams({
+        startLat: startCoords.lat,
+        startLng: startCoords.lng,
+        endLat: endCoords.lat,
+        endLng: endCoords.lng
+    });
+
+    const response = await fetch(`/.netlify/functions/getRoute?${params.toString()}`);
     const data = await response.json();
     return data;
 }
