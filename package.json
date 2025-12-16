@@ -5,5 +5,8 @@
   "scripts": {
     "fetch-data": "node fetch-data.js"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
 }
