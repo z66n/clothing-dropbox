@@ -57,8 +57,7 @@ python -m http.server 5000
 
 ## 📦 Data Source
 
-* **City of Toronto Open Data — Clothing Drop Box Locations**
-  Original dataset: [https://open.toronto.ca/dataset/clothing-drop-box-locations/](https://open.toronto.ca/dataset/clothing-drop-box-locations/)
+* **[City of Toronto Open Data — Clothing Drop Box Locations](https://open.toronto.ca/dataset/clothing-drop-box-locations/)**
 
 ## 🔁 Automated Data Updates
 
